@@ -10,9 +10,13 @@ public:
         cout << "부모 Draw" << endl;
     }
     */
-    virtual void Draw() {
-        cout << "부모 Draw" << endl;
-    }
+    
+
+    /*
+    정의부가 없는 가상함수를 순수가상함수이며,
+     정의부가 필요없을 때 0을 대입하면 된다.
+    */
+    virtual void Draw() = 0;
 private:
 };
 
@@ -37,7 +41,9 @@ int main () {
 
 
     // 넘겨받은 개체 클래스의 멤버함수를 호출하도록 한다.
+    cout << "pShp->Draw(): ";
     pShp->Draw(); // 부모를 virtual 함수를 통한 자식 함수 호출
+    cout << "sqr.Draw(): ";
     sqr.Draw(); // 직접 자식 함수 호출
 
 /*
